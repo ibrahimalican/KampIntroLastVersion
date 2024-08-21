@@ -26,6 +26,20 @@
             var sonuc = myDelegate3(2, 3);
             Console.WriteLine(sonuc);
 
+            Func<int, int, int> add = matematik.Topla;
+            Console.WriteLine(add(11, 95));
+
+            Func<int> getRandomNumber = delegate ()
+            {
+                Random random = new Random();
+                return random.Next(1, 100);
+            };
+            Console.WriteLine(getRandomNumber());
+
+            Thread.Sleep(1000);
+            Func<int> getRandomNumber2 = () => new Random().Next(1, 100);
+            Console.WriteLine(getRandomNumber2());
+
             myDelegate2("Hello");
             myDelegate();
         }
